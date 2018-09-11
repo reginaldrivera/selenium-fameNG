@@ -1,6 +1,6 @@
 package famengpackage;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,7 +11,12 @@ import org.testng.Assert;
 public class fpg1001NG {
 
 	public WebDriver driver;
-	public String baseURL = "https://www.fameandpartners.com";
+
+	public String protocol = "https://";
+	public String usernamePassword = "fandpstaging:auth4fandpstaging@";
+	//public String baseURL = "qa1.fameandpartners.com"; //QA1 URL
+	public String baseURL = "www.fameandpartners.com"; //PRODUCTION URL
+	
 	public String pageURL = "/dresses/custom-dress-FPG1001";
 	String driverPath = "/Users/reginaldrivera/Documents/chromedriver";
 
@@ -19,7 +24,12 @@ public class fpg1001NG {
 	public void launchBrowser() {
 		System.setProperty("webdriver.chrome.driver", driverPath);
 		driver = new ChromeDriver();
-		driver.get(baseURL + pageURL);
+		if (baseURL.contentEquals("www.fameandpartners.com")){
+		driver.get(protocol + baseURL + pageURL);
+		}
+		else{
+			driver.get(protocol + usernamePassword + baseURL + pageURL);
+		}
 	}
 
 	@Test
@@ -87,12 +97,12 @@ public class fpg1001NG {
 		System.out.println("Verify Order Fabric Swatches Link");
 		System.out.println("Expected label:  " + orderFabricSwatchesLabel);
 		System.out.println("Actual label:  " + orderFabricSwatches.getText() + "\n");
-		
+
 		Assert.assertEquals(orderFabricSwatches.getText(), orderFabricSwatchesLabel);
 
 		System.out.println("Expected URL:  " + orderFabricSwatchesLink);
 		System.out.println("Actual URL:  " + orderFabricSwatchesURL + "\n");
-		
+
 		Assert.assertEquals(orderFabricSwatchesURL, orderFabricSwatchesLink);
 	}
 
@@ -107,7 +117,7 @@ public class fpg1001NG {
 		System.out.println("Verify Delivery and Shipping copy");
 		System.out.println("Expected text:  " + deliveryShippingText);
 		System.out.println("Actual text:  " + deliveryShipping.getText() + "\n");
-		
+
 		Assert.assertEquals(deliveryShipping.getText(), deliveryShippingText);
 	}
 

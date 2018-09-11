@@ -5,8 +5,12 @@
     <classes>
       <class name="famengpackage.fpg1001NG">
         <methods>
+          <include name="fpg1001VerifyShareDesignLink"/>
           <include name="fpg1001VerifyDeliveryShippingCopy"/>
           <include name="launchBrowser"/>
+          <include name="fpg1001VerifyName"/>
+          <include name="fpg1001VerifyOrderFabricSwatchesLink"/>
+          <include name="fpg1001VerifyPrice"/>
           <include name="terminaateBrowser"/>
         </methods>
       </class> <!-- famengpackage.fpg1001NG -->
