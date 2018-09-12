@@ -122,7 +122,7 @@ public class fpg1001NG {
 	}
 
 	@AfterTest
-	public void terminaateBrowser() {
+	public void terminateBrowser() {
 		driver.close();
 	}
 }
