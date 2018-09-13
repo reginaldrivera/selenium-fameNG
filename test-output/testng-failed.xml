@@ -6,8 +6,7 @@
       <class name="famengpackage.purchaseVisa">
         <methods>
           <include name="launchBrowser"/>
-          <include name="checkoutPage"/>
-          <include name="paymentPage"/>
+          <include name="terminateBrowser"/>
           <include name="confirmationPage"/>
         </methods>
       </class> <!-- famengpackage.purchaseVisa -->

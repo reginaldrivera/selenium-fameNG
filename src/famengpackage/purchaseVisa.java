@@ -33,7 +33,7 @@ public class purchaseVisa {
 		//driver.manage().window().maximize();
 	}
 	
-	@Test
+	@Test (priority = 0)
 	public void addToBag(){
 
 		// Select Height in PDP then click Add to Bag button
@@ -60,7 +60,7 @@ public class purchaseVisa {
 		System.out.println("Does Checkout button exists?  " + isPresent);
 	}
 	
-	@Test
+	@Test (priority = 1)
 	public void checkoutPage(){
 		
 		//Click the CHECKOUT button
@@ -100,7 +100,7 @@ public class purchaseVisa {
 		}
 	}
 	
-	@Test
+	@Test (priority = 2)
 	public void paymentPage(){
 		//Dismiss Return Insurance Popup
 		WebElement insurancePopupContinue = driver.findElement(By.xpath("//button[contains(text(),'continue')]"));
@@ -123,32 +123,21 @@ public class purchaseVisa {
 		driver.findElement(By.xpath("//button[@class='btn btn-black btn-block btn-md StripeForm__checkout-button']")).click();
 	}
 	
-	@Test
+	@Test (priority = 3)
 	public void confirmationPage(){
-		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+		driver.switchTo().defaultContent();
+		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 		String headerExpected = "Thanks for your order!";
 		WebElement headerActual = driver.findElement(By.xpath("//h1[@class='order']"));
 		//Verify Header is correct in Order Confirmation Page
-		Assert.assertEquals(headerActual.getText(), headerExpected);
-		
-		
-		
-		
-		
-		
-//		driver.findElement(By.xpath("")).sendKeys("");
-//		driver.findElement(By.xpath("")).sendKeys("");
-//		driver.findElement(By.xpath("")).sendKeys("");
-//		driver.findElement(By.xpath("")).sendKeys("");
-//		driver.findElement(By.xpath("")).sendKeys("");
-//		driver.findElement(By.xpath("")).sendKeys("");
-
-		
-
-
-
-		
-		
+		System.out.println("Expected Header text:  " + headerExpected);
+		System.out.println("Actual Header text:  " + headerActual.getText());
+		Assert.assertEquals(headerActual.getText(), headerExpected);		
+	}
+	
+	@AfterTest
+	public void terminateBrowser() {
+		driver.close();
 	}
 
 }
