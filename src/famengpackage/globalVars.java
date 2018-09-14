@@ -27,15 +27,18 @@ public class globalVars {
 	
 	//payment information
 	public static String ccVisa = "4242424242424242";
+	public static String ccVisaDebit = "4000056655665556";
+	public static String ccMasterCard = "5555555555554444";
+	public static String ccMasterCardDebit = "5200828282828210";
+	public static String ccAmex = "378282246310005";
+	public static String ccDiscover = "6011111111111117";
 	public static String ccExpDate = "424";
 	public static String ccCVC = "424";
+	public static String ccCVCAmex = "4242";
 	public static String ccZipCode = "90424";
 	
 	//buttons
 	public static String btnSideCartCheckout = "//a[@class='jsx-960340962 button Button Button--fullwidth']";
 	public static String btnCheckoutContinueToPayment = "//button[@name='pay_securely']";
 	public static String btnPaymentPlaceOrder = "//button[@class='btn btn-black btn-block btn-md StripeForm__checkout-button']";
-
-	
-
 }

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.*;
 import org.testng.Assert;
 
-public class purchaseVisa {
+public class purchaseMastercard {
 	
 	public WebDriver driver;
 
@@ -62,7 +62,7 @@ public class purchaseVisa {
 		driver.findElement(By.xpath(globalVars.btnSideCartCheckout)).click();
 		
 		//Fill out Deliver To fields
-		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_firstname']")).sendKeys(globalVars.firstname + "_visa"); //first name
+		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_firstname']")).sendKeys(globalVars.firstname + "_mastercard"); //first name
 		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_lastname']")).sendKeys(globalVars.lastName); //last name
 		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_email']")).sendKeys(globalVars.email); //email
 		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_phone']")).sendKeys(globalVars.phone); //phone
@@ -99,7 +99,7 @@ public class purchaseVisa {
 		
 		//Access the Stripe iFrame and Fill out credit card info
 		driver.switchTo().frame("__privateStripeFrame3");
-		driver.findElement(By.name("cardnumber")).sendKeys(globalVars.ccVisa); //test account for visa
+		driver.findElement(By.name("cardnumber")).sendKeys(globalVars.ccMasterCard); //test account for mastercard
 		driver.findElement(By.name("exp-date")).sendKeys(globalVars.ccExpDate);
 		driver.findElement(By.name("cvc")).sendKeys(globalVars.ccCVC);
 		driver.findElement(By.name("postal")).sendKeys(globalVars.ccZipCode);
