@@ -11,11 +11,6 @@ import org.testng.Assert;
 public class fpg1001NG {
 
 	public WebDriver driver;
-
-	public String protocol = "https://";
-	public String usernamePassword = "fandpstaging:auth4fandpstaging@";
-	//public String baseURL = "qa1.fameandpartners.com"; //QA1 URL
-	public String baseURL = "www.fameandpartners.com"; //PRODUCTION URL
 	
 	public String pageURL = "/dresses/custom-dress-FPG1001";
 	String driverPath = "/Users/reginaldrivera/Documents/chromedriver";
@@ -24,12 +19,10 @@ public class fpg1001NG {
 	public void launchBrowser() {
 		System.setProperty("webdriver.chrome.driver", driverPath);
 		driver = new ChromeDriver();
-		if (baseURL.contentEquals("www.fameandpartners.com")){
-		driver.get(protocol + baseURL + pageURL);
-		}
-		else{
-			driver.get(protocol + usernamePassword + baseURL + pageURL);
-		}
+		//PROD
+		driver.get(globalVars.protocol + globalVars.prodBaseURL + pageURL);
+		//QA
+		//driver.get(globalVars.protocol + globalVars.usernamePassword + globalVars.qaBaseURL + pageURL);
 	}
 
 	@Test

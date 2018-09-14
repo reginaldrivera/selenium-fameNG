@@ -12,11 +12,6 @@ public class purchaseVisa {
 	
 	public WebDriver driver;
 
-	public String protocol = "https://";
-	public String usernamePassword = "fandpstaging:auth4fandpstaging@";
-	public String baseURL = "qa1.fameandpartners.com"; //QA1 URL
-	//public String baseURL = "www.fameandpartners.com"; //PRODUCTION URL
-	
 	public String pageURL = "/dresses/custom-dress-FPG1001";
 	String driverPath = "/Users/reginaldrivera/Documents/chromedriver";
 
@@ -24,12 +19,11 @@ public class purchaseVisa {
 	public void launchBrowser() {
 		System.setProperty("webdriver.chrome.driver", driverPath);
 		driver = new ChromeDriver();
-		if (baseURL.contentEquals("www.fameandpartners.com")){
-		driver.get(protocol + baseURL + pageURL);
-		}
-		else{
-			driver.get(protocol + usernamePassword + baseURL + pageURL);
-		}
+		//PROD
+		//driver.get(globalVars.protocol + globalVars.prodBaseURL + pageURL);
+		//QA
+		driver.get(globalVars.protocol + globalVars.usernamePassword + globalVars.qaBaseURL + pageURL);
+		
 		//driver.manage().window().maximize();
 	}
 	
@@ -65,38 +59,32 @@ public class purchaseVisa {
 		
 		//Click the CHECKOUT button
 		driver.manage().window().maximize();
-		driver.findElement(By.xpath("//a[@class='jsx-960340962 button Button Button--fullwidth']")).click();
-		//Construct unique Last Name by using date and time values
-		String date = java.time.LocalDate.now().toString();
-		String time = java.time.LocalTime.now().toString();
-		String lastName = date + time;
-		
-		lastName = lastName.replaceAll("\\p{Punct}","");
+		driver.findElement(By.xpath(globalVars.btnSideCartCheckout)).click();
 		
 		//Fill out Deliver To fields
-		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_firstname']")).sendKeys("test"); //first name
-		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_lastname']")).sendKeys(lastName); //last name
-		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_email']")).sendKeys(lastName + "@mailinator.com"); //email
-		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_phone']")).sendKeys("888-888-8888"); //phone
+		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_firstname']")).sendKeys(globalVars.firstname); //first name
+		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_lastname']")).sendKeys(globalVars.lastName); //last name
+		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_email']")).sendKeys(globalVars.email); //email
+		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_phone']")).sendKeys(globalVars.phone); //phone
 		
 		//Fill out Delivery Address fields
 		Select drpCountry = new Select(driver.findElement(By.name("order[ship_address_attributes][country_id]")));
 		Select drpState = new Select(driver.findElement(By.name("order[ship_address_attributes][state_id]")));
 		
 		drpCountry.selectByVisibleText("United States"); //Country
-		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_address1']")).sendKeys("123 Test Address"); //Street Address
-		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_city']")).sendKeys("Los Angeles"); //City
-		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_zipcode']")).sendKeys("90000"); //Zip Code
-		drpState.selectByVisibleText("California"); //State
+		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_address1']")).sendKeys(globalVars.streetAddress); //Street Address
+		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_city']")).sendKeys(globalVars.city); //City
+		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_zipcode']")).sendKeys(globalVars.zipcode); //Zip Code
+		drpState.selectByVisibleText(globalVars.state); //State
 		WebElement alsoBilling = driver.findElement(By.xpath("//input[@id='ship_to_address']"));
 		if (alsoBilling.isSelected()){
 			//Click Continue to Payment button
-			driver.findElement(By.xpath("//button[@name='pay_securely']")).click();
+			driver.findElement(By.xpath(globalVars.btnCheckoutContinueToPayment)).click();
 		}
 		else{
 			//Click Continue to Payment button
 			alsoBilling.click();
-			driver.findElement(By.xpath("//button[@name='pay_securely']")).click();
+			driver.findElement(By.xpath(globalVars.btnCheckoutContinueToPayment)).click();
 		}
 	}
 	
@@ -111,16 +99,16 @@ public class purchaseVisa {
 		
 		//Access the Stripe iFrame and Fill out credit card info
 		driver.switchTo().frame("__privateStripeFrame3");
-		driver.findElement(By.name("cardnumber")).sendKeys("4242424242424242"); //test account for visa
-		driver.findElement(By.name("exp-date")).sendKeys("0424");
-		driver.findElement(By.name("cvc")).sendKeys("424");
-		driver.findElement(By.name("postal")).sendKeys("90424");
+		driver.findElement(By.name("cardnumber")).sendKeys(globalVars.ccVisa); //test account for visa
+		driver.findElement(By.name("exp-date")).sendKeys(globalVars.ccExpDate);
+		driver.findElement(By.name("cvc")).sendKeys(globalVars.ccCVC);
+		driver.findElement(By.name("postal")).sendKeys(globalVars.ccZipCode);
 		driver.findElement(By.name("postal")).sendKeys(Keys.TAB);
 		
 		//Place Your Order Now
 		driver.manage().window().maximize();
 		driver.switchTo().defaultContent(); //get out of Stripe iFrame
-		driver.findElement(By.xpath("//button[@class='btn btn-black btn-block btn-md StripeForm__checkout-button']")).click();
+		driver.findElement(By.xpath(globalVars.btnPaymentPlaceOrder)).click();
 	}
 	
 	@Test (priority = 3)
