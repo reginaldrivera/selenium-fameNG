@@ -2,36 +2,36 @@
 <testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18859" started-at="2018-09-14T22:45:01Z" finished-at="2018-09-14T22:45:19Z">
+  <suite name="Default suite" duration-ms="18678" started-at="2018-09-17T21:02:18Z" finished-at="2018-09-17T21:02:36Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18859" started-at="2018-09-14T22:45:01Z" finished-at="2018-09-14T22:45:19Z">
-      <class name="famengpackage.purchaseVisa">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:famengpackage.purchaseVisa@29ee9faa]" name="launchBrowser" is-config="true" duration-ms="4855" started-at="2018-09-14T22:45:01Z" finished-at="2018-09-14T22:45:05Z">
+    <test name="Default test" duration-ms="18678" started-at="2018-09-17T21:02:18Z" finished-at="2018-09-17T21:02:36Z">
+      <class name="famengpackage.purchaseAmex">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:famengpackage.purchaseAmex@4b952a2d]" name="launchBrowser" is-config="true" duration-ms="3419" started-at="2018-09-17T21:02:18Z" finished-at="2018-09-17T21:02:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="addToBag()[pri:0, instance:famengpackage.purchaseVisa@29ee9faa]" name="addToBag" duration-ms="2842" started-at="2018-09-14T22:45:05Z" finished-at="2018-09-14T22:45:08Z">
+        <test-method status="PASS" signature="addToBag()[pri:0, instance:famengpackage.purchaseAmex@4b952a2d]" name="addToBag" duration-ms="2981" started-at="2018-09-17T21:02:21Z" finished-at="2018-09-17T21:02:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToBag -->
-        <test-method status="PASS" signature="checkoutPage()[pri:1, instance:famengpackage.purchaseVisa@29ee9faa]" name="checkoutPage" duration-ms="5113" started-at="2018-09-14T22:45:08Z" finished-at="2018-09-14T22:45:13Z">
+        <test-method status="PASS" signature="checkoutPage()[pri:1, instance:famengpackage.purchaseAmex@4b952a2d]" name="checkoutPage" duration-ms="5735" started-at="2018-09-17T21:02:24Z" finished-at="2018-09-17T21:02:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkoutPage -->
-        <test-method status="PASS" signature="paymentPage()[pri:2, instance:famengpackage.purchaseVisa@29ee9faa]" name="paymentPage" duration-ms="719" started-at="2018-09-14T22:45:13Z" finished-at="2018-09-14T22:45:14Z">
+        <test-method status="PASS" signature="paymentPage()[pri:2, instance:famengpackage.purchaseAmex@4b952a2d]" name="paymentPage" duration-ms="754" started-at="2018-09-17T21:02:30Z" finished-at="2018-09-17T21:02:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- paymentPage -->
-        <test-method status="PASS" signature="confirmationPage()[pri:3, instance:famengpackage.purchaseVisa@29ee9faa]" name="confirmationPage" duration-ms="5201" started-at="2018-09-14T22:45:14Z" finished-at="2018-09-14T22:45:19Z">
+        <test-method status="PASS" signature="confirmationPage()[pri:3, instance:famengpackage.purchaseAmex@4b952a2d]" name="confirmationPage" duration-ms="5661" started-at="2018-09-17T21:02:31Z" finished-at="2018-09-17T21:02:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- confirmationPage -->
-        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:famengpackage.purchaseVisa@29ee9faa]" name="terminateBrowser" is-config="true" duration-ms="108" started-at="2018-09-14T22:45:19Z" finished-at="2018-09-14T22:45:19Z">
+        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:famengpackage.purchaseAmex@4b952a2d]" name="terminateBrowser" is-config="true" duration-ms="105" started-at="2018-09-17T21:02:36Z" finished-at="2018-09-17T21:02:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- terminateBrowser -->
-      </class> <!-- famengpackage.purchaseVisa -->
+      </class> <!-- famengpackage.purchaseAmex -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

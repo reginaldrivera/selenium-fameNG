@@ -3,6 +3,7 @@ package famengpackage;
 
 public class globalVars {
 	//page attributes
+	public static String chromePath = "/Users/reginaldrivera/Documents/chromedriver";
 	public static String protocol = "https://";
 	public static String usernamePassword = "fandpstaging:auth4fandpstaging@";
 	public static String qaBaseURL = "qa1.fameandpartners.com"; //QA1 URL
@@ -41,4 +42,16 @@ public class globalVars {
 	public static String btnSideCartCheckout = "//a[@class='jsx-960340962 button Button Button--fullwidth']";
 	public static String btnCheckoutContinueToPayment = "//button[@name='pay_securely']";
 	public static String btnPaymentPlaceOrder = "//button[@class='btn btn-black btn-block btn-md StripeForm__checkout-button']";
+	
+	//textboxes - Checkout page
+	public static String txtboxCheckoutFirstName = "//input[@id='order_ship_address_attributes_firstname']";
+	public static String txtboxCheckoutLastName = "//input[@id='order_ship_address_attributes_lastname']";
+	public static String txtboxCheckoutEmail = "//input[@id='order_ship_address_attributes_email']";
+	public static String txtboxCheckoutPhone = "//input[@id='order_ship_address_attributes_phone']";
+	public static String txtboxCheckoutStreetAddress = "//input[@id='order_ship_address_attributes_address1']";
+	public static String txtboxCheckoutStreetAddress2 = "";
+	public static String txtboxCheckoutCity = "//input[@id='order_ship_address_attributes_city']";
+	public static String drpdownCheckoutState = "order[ship_address_attributes][state_id]";
+	public static String drpdownCheckoutCountry = "order[ship_address_attributes][country_id]";
+	public static String txtboxCheckoutZipCode = "//input[@id='order_ship_address_attributes_zipcode']";
 }

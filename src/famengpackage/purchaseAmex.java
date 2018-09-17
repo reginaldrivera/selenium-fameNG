@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.*;
 import org.testng.Assert;
 
-public class purchaseMastercard {
+public class purchaseAmex {
 	
 	public WebDriver driver;
 
@@ -99,9 +99,9 @@ public class purchaseMastercard {
 		
 		//Access the Stripe iFrame and Fill out credit card info
 		driver.switchTo().frame("__privateStripeFrame3");
-		driver.findElement(By.name("cardnumber")).sendKeys(globalVars.ccMasterCard); //test account for mastercard
+		driver.findElement(By.name("cardnumber")).sendKeys(globalVars.ccAmex); //test account for visa
 		driver.findElement(By.name("exp-date")).sendKeys(globalVars.ccExpDate);
-		driver.findElement(By.name("cvc")).sendKeys(globalVars.ccCVC);
+		driver.findElement(By.name("cvc")).sendKeys(globalVars.ccCVCAmex);
 		driver.findElement(By.name("postal")).sendKeys(globalVars.ccZipCode);
 		driver.findElement(By.name("postal")).sendKeys(Keys.TAB);
 		

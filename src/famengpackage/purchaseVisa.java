@@ -13,7 +13,7 @@ public class purchaseVisa {
 	public WebDriver driver;
 
 	public String pageURL = "/dresses/custom-dress-FPG1001";
-	String driverPath = "/Users/reginaldrivera/Documents/chromedriver";
+	String driverPath = globalVars.chromePath;
 
 	@BeforeTest
 	public void launchBrowser() {
@@ -62,19 +62,19 @@ public class purchaseVisa {
 		driver.findElement(By.xpath(globalVars.btnSideCartCheckout)).click();
 		
 		//Fill out Deliver To fields
-		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_firstname']")).sendKeys(globalVars.firstname + "_visa"); //first name
-		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_lastname']")).sendKeys(globalVars.lastName); //last name
-		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_email']")).sendKeys(globalVars.email); //email
-		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_phone']")).sendKeys(globalVars.phone); //phone
+		driver.findElement(By.xpath(globalVars.txtboxCheckoutFirstName)).sendKeys(globalVars.firstname + "_visa"); //first name
+		driver.findElement(By.xpath(globalVars.txtboxCheckoutLastName)).sendKeys(globalVars.lastName); //last name
+		driver.findElement(By.xpath(globalVars.txtboxCheckoutEmail)).sendKeys(globalVars.email); //email
+		driver.findElement(By.xpath(globalVars.txtboxCheckoutPhone)).sendKeys(globalVars.phone); //phone
 		
 		//Fill out Delivery Address fields
-		Select drpCountry = new Select(driver.findElement(By.name("order[ship_address_attributes][country_id]")));
-		Select drpState = new Select(driver.findElement(By.name("order[ship_address_attributes][state_id]")));
+		Select drpCountry = new Select(driver.findElement(By.name(globalVars.drpdownCheckoutCountry)));
+		Select drpState = new Select(driver.findElement(By.name(globalVars.drpdownCheckoutState)));
 		
 		drpCountry.selectByVisibleText("United States"); //Country
-		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_address1']")).sendKeys(globalVars.streetAddress); //Street Address
-		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_city']")).sendKeys(globalVars.city); //City
-		driver.findElement(By.xpath("//input[@id='order_ship_address_attributes_zipcode']")).sendKeys(globalVars.zipcode); //Zip Code
+		driver.findElement(By.xpath(globalVars.txtboxCheckoutStreetAddress)).sendKeys(globalVars.streetAddress); //Street Address
+		driver.findElement(By.xpath(globalVars.txtboxCheckoutCity)).sendKeys(globalVars.city); //City
+		driver.findElement(By.xpath(globalVars.txtboxCheckoutZipCode)).sendKeys(globalVars.zipcode); //Zip Code
 		drpState.selectByVisibleText(globalVars.state); //State
 		WebElement alsoBilling = driver.findElement(By.xpath("//input[@id='ship_to_address']"));
 		if (alsoBilling.isSelected()){

@@ -13,7 +13,7 @@ public class fpg1001NG {
 	public WebDriver driver;
 	
 	public String pageURL = "/dresses/custom-dress-FPG1001";
-	String driverPath = "/Users/reginaldrivera/Documents/chromedriver";
+	String driverPath = globalVars.chromePath;
 
 	@BeforeTest
 	public void launchBrowser() {

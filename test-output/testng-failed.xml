@@ -3,13 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="famengpackage.fpg1001NG">
+      <class name="famengpackage.purchaseAmex">
         <methods>
-          <include name="launchBrowser"/>
           <include name="terminateBrowser"/>
-          <include name="fpg1001VerifyPrice"/>
+          <include name="confirmationPage"/>
+          <include name="checkoutPage"/>
+          <include name="paymentPage"/>
+          <include name="launchBrowser"/>
         </methods>
-      </class> <!-- famengpackage.fpg1001NG -->
+      </class> <!-- famengpackage.purchaseAmex -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
