@@ -44,6 +44,7 @@ public class globalVars {
 	public static String btnCheckoutContinueToPayment = "//button[@name='pay_securely']";
 	public static String btnPaymentPlaceOrder = "//button[@class='btn btn-black btn-block btn-md StripeForm__checkout-button']";
 	public static String btnSignUpJoin = "//button[@class='jsx-1369247218 button Button Button--fullwidth']";
+	public static String btnLoginLogin = "//button[@class='jsx-1369247218 button Button Button--fullwidth']";
 	
 	//textboxes - Checkout page
 	public static String txtboxCheckoutFirstName = "//input[@id='order_ship_address_attributes_firstname']";

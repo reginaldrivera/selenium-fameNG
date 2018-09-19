@@ -23,7 +23,7 @@ public class signUp {
 	}
 	
 	@Test (priority = 0)
-	public void loginNoCredentials(){
+	public void signupNoCredentials(){
 		driver.findElement(By.xpath(globalVars.btnSignUpJoin)).click(); //click the Join button without typing any credentials
 		String expectedError = "Check that you've filled in all fields and your email is correct";
 		String actualError = driver.findElement(By.xpath("//p[@class='error']")).getText();
@@ -35,7 +35,7 @@ public class signUp {
 	}
 	
 	@Test (priority = 1)
-	public void loginFirstNameOnly(){
+	public void signupFirstNameOnly(){
 		driver.findElement(By.xpath(globalVars.txtboxSignUpFirstName)).sendKeys(globalVars.firstname); //type first name only
 		driver.findElement(By.xpath(globalVars.btnSignUpJoin)).click(); //click the Join button
 		String expectedError = "Check that you've filled in all fields and your email is correct";
@@ -48,7 +48,7 @@ public class signUp {
 	}
 	
 	@Test (priority = 2)
-	public void loginLastNameOnly(){
+	public void signupLastNameOnly(){
 		driver.findElement(By.xpath(globalVars.txtboxSignUpLastName)).sendKeys(globalVars.lastName); //type last name only
 		driver.findElement(By.xpath(globalVars.btnSignUpJoin)).click(); //click the Join button
 		String expectedError = "Check that you've filled in all fields and your email is correct";
@@ -74,7 +74,7 @@ public class signUp {
 	}
 	
 	@Test (priority = 4)
-	public void loginPasswordOnly(){
+	public void signupPasswordOnly(){
 		driver.findElement(By.xpath(globalVars.txtboxSignUpPassword)).sendKeys(globalVars.password); //type password only
 		driver.findElement(By.xpath(globalVars.btnSignUpJoin)).click(); //click the Join button
 		String expectedError = "Check that you've filled in all fields and your email is correct";
@@ -87,7 +87,7 @@ public class signUp {
 	}
 	
 	@Test (priority = 5)
-	public void loginFull(){
+	public void signupFull(){
 		driver.findElement(By.xpath(globalVars.txtboxSignUpFirstName)).sendKeys(globalVars.firstname);
 		driver.findElement(By.xpath(globalVars.txtboxSignUpLastName)).sendKeys(globalVars.lastName);
 		String expectedLastName = globalVars.lastName;
