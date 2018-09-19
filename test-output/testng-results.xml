@@ -1,37 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18678" started-at="2018-09-17T21:02:18Z" finished-at="2018-09-17T21:02:36Z">
+  <suite name="Default suite" duration-ms="8545" started-at="2018-09-19T00:11:57Z" finished-at="2018-09-19T00:12:06Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18678" started-at="2018-09-17T21:02:18Z" finished-at="2018-09-17T21:02:36Z">
-      <class name="famengpackage.purchaseAmex">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:famengpackage.purchaseAmex@4b952a2d]" name="launchBrowser" is-config="true" duration-ms="3419" started-at="2018-09-17T21:02:18Z" finished-at="2018-09-17T21:02:21Z">
+    <test name="Default test" duration-ms="8545" started-at="2018-09-19T00:11:57Z" finished-at="2018-09-19T00:12:06Z">
+      <class name="famengpackage.signUp">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:famengpackage.signUp@4b952a2d]" name="launchBrowser" is-config="true" duration-ms="2837" started-at="2018-09-19T00:11:57Z" finished-at="2018-09-19T00:12:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="addToBag()[pri:0, instance:famengpackage.purchaseAmex@4b952a2d]" name="addToBag" duration-ms="2981" started-at="2018-09-17T21:02:21Z" finished-at="2018-09-17T21:02:24Z">
+        <test-method status="PASS" signature="loginNoCredentials()[pri:0, instance:famengpackage.signUp@4b952a2d]" name="loginNoCredentials" duration-ms="592" started-at="2018-09-19T00:12:00Z" finished-at="2018-09-19T00:12:01Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addToBag -->
-        <test-method status="PASS" signature="checkoutPage()[pri:1, instance:famengpackage.purchaseAmex@4b952a2d]" name="checkoutPage" duration-ms="5735" started-at="2018-09-17T21:02:24Z" finished-at="2018-09-17T21:02:30Z">
+        </test-method> <!-- loginNoCredentials -->
+        <test-method status="PASS" signature="loginFirstNameOnly()[pri:1, instance:famengpackage.signUp@4b952a2d]" name="loginFirstNameOnly" duration-ms="548" started-at="2018-09-19T00:12:01Z" finished-at="2018-09-19T00:12:01Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkoutPage -->
-        <test-method status="PASS" signature="paymentPage()[pri:2, instance:famengpackage.purchaseAmex@4b952a2d]" name="paymentPage" duration-ms="754" started-at="2018-09-17T21:02:30Z" finished-at="2018-09-17T21:02:31Z">
+        </test-method> <!-- loginFirstNameOnly -->
+        <test-method status="PASS" signature="loginLastNameOnly()[pri:2, instance:famengpackage.signUp@4b952a2d]" name="loginLastNameOnly" duration-ms="579" started-at="2018-09-19T00:12:01Z" finished-at="2018-09-19T00:12:02Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- paymentPage -->
-        <test-method status="PASS" signature="confirmationPage()[pri:3, instance:famengpackage.purchaseAmex@4b952a2d]" name="confirmationPage" duration-ms="5661" started-at="2018-09-17T21:02:31Z" finished-at="2018-09-17T21:02:36Z">
+        </test-method> <!-- loginLastNameOnly -->
+        <test-method status="PASS" signature="loginEmailOnly()[pri:3, instance:famengpackage.signUp@4b952a2d]" name="loginEmailOnly" duration-ms="824" started-at="2018-09-19T00:12:02Z" finished-at="2018-09-19T00:12:03Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- confirmationPage -->
-        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:famengpackage.purchaseAmex@4b952a2d]" name="terminateBrowser" is-config="true" duration-ms="105" started-at="2018-09-17T21:02:36Z" finished-at="2018-09-17T21:02:36Z">
+        </test-method> <!-- loginEmailOnly -->
+        <test-method status="PASS" signature="loginPasswordOnly()[pri:4, instance:famengpackage.signUp@4b952a2d]" name="loginPasswordOnly" duration-ms="536" started-at="2018-09-19T00:12:03Z" finished-at="2018-09-19T00:12:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPasswordOnly -->
+        <test-method status="PASS" signature="loginFull()[pri:5, instance:famengpackage.signUp@4b952a2d]" name="loginFull" duration-ms="2532" started-at="2018-09-19T00:12:03Z" finished-at="2018-09-19T00:12:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginFull -->
+        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:famengpackage.signUp@4b952a2d]" name="terminateBrowser" is-config="true" duration-ms="73" started-at="2018-09-19T00:12:06Z" finished-at="2018-09-19T00:12:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- terminateBrowser -->
-      </class> <!-- famengpackage.purchaseAmex -->
+      </class> <!-- famengpackage.signUp -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

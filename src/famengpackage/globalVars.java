@@ -6,7 +6,7 @@ public class globalVars {
 	public static String chromePath = "/Users/reginaldrivera/Documents/chromedriver";
 	public static String protocol = "https://";
 	public static String usernamePassword = "fandpstaging:auth4fandpstaging@";
-	public static String qaBaseURL = "qa1.fameandpartners.com"; //QA1 URL
+	public static String qaBaseURL = "qa4.fameandpartners.com"; //QA1 URL
 	public static String prodBaseURL = "www.fameandpartners.com"; //PRODUCTION URL
 	
 	//account information
@@ -18,6 +18,7 @@ public class globalVars {
 	public static String lastName = constructLastName.replaceAll("\\p{Punct}","");
 	public static String email = lastName + "@mailinator.com";
 	public static String phone = "8888888888";
+	public static String password = "Test1234";
 	
 	//address information
 	public static String streetAddress = "123 Test Address";
@@ -42,6 +43,7 @@ public class globalVars {
 	public static String btnSideCartCheckout = "//a[@class='jsx-960340962 button Button Button--fullwidth']";
 	public static String btnCheckoutContinueToPayment = "//button[@name='pay_securely']";
 	public static String btnPaymentPlaceOrder = "//button[@class='btn btn-black btn-block btn-md StripeForm__checkout-button']";
+	public static String btnSignUpJoin = "//button[@class='jsx-1369247218 button Button Button--fullwidth']";
 	
 	//textboxes - Checkout page
 	public static String txtboxCheckoutFirstName = "//input[@id='order_ship_address_attributes_firstname']";
@@ -54,4 +56,18 @@ public class globalVars {
 	public static String drpdownCheckoutState = "order[ship_address_attributes][state_id]";
 	public static String drpdownCheckoutCountry = "order[ship_address_attributes][country_id]";
 	public static String txtboxCheckoutZipCode = "//input[@id='order_ship_address_attributes_zipcode']";
+	
+	//textboxes - signup page
+	public static String txtboxSignUpFirstName = "//input[@placeholder='First Name']";
+	public static String txtboxSignUpLastName = "//input[@placeholder='Last Name']";
+	public static String txtboxSignUpEmail = "//input[@placeholder='Email']";
+	public static String txtboxSignUpPassword = "//input[@placeholder='Password']";
+	
+	//textboxes - Profile page
+	public static String txtboxProfileFirstName = "";
+	public static String txtboxProfileLastName = "//input[@id='profile_last_name']";
+	public static String txtboxProfileEmail = "//input[@id='profile_email']";
+	
+	
+	
 }

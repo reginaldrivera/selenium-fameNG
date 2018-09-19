@@ -24,9 +24,88 @@ public class signUp {
 	
 	@Test (priority = 0)
 	public void loginNoCredentials(){
-		//driver.findElement(By.xpath(xpathExpression)).click; //click the Signup button without typing any credentials
+		driver.findElement(By.xpath(globalVars.btnSignUpJoin)).click(); //click the Join button without typing any credentials
+		String expectedError = "Check that you've filled in all fields and your email is correct";
+		String actualError = driver.findElement(By.xpath("//p[@class='error']")).getText();
 		
-		String expectedError = "";
+		Assert.assertEquals(actualError, expectedError);
 		
+		driver.navigate().refresh(); //refresh page after verification passes
+		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+	}
+	
+	@Test (priority = 1)
+	public void loginFirstNameOnly(){
+		driver.findElement(By.xpath(globalVars.txtboxSignUpFirstName)).sendKeys(globalVars.firstname); //type first name only
+		driver.findElement(By.xpath(globalVars.btnSignUpJoin)).click(); //click the Join button
+		String expectedError = "Check that you've filled in all fields and your email is correct";
+		String actualError = driver.findElement(By.xpath("//p[@class='error']")).getText();
+		
+		Assert.assertEquals(actualError, expectedError);
+		
+		driver.navigate().refresh(); //refresh page after verification passes	
+		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+	}
+	
+	@Test (priority = 2)
+	public void loginLastNameOnly(){
+		driver.findElement(By.xpath(globalVars.txtboxSignUpLastName)).sendKeys(globalVars.lastName); //type last name only
+		driver.findElement(By.xpath(globalVars.btnSignUpJoin)).click(); //click the Join button
+		String expectedError = "Check that you've filled in all fields and your email is correct";
+		String actualError = driver.findElement(By.xpath("//p[@class='error']")).getText();
+		
+		Assert.assertEquals(actualError, expectedError);
+		
+		driver.navigate().refresh(); //refresh page after verification passes		
+		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+	}
+	
+	@Test (priority = 3)
+	public void loginEmailOnly(){
+		driver.findElement(By.xpath(globalVars.txtboxSignUpEmail)).sendKeys(globalVars.email); //type email only
+		driver.findElement(By.xpath(globalVars.btnSignUpJoin)).click(); //click the Join button
+		String expectedError = "Check that you've filled in all fields and your email is correct";
+		String actualError = driver.findElement(By.xpath("//p[@class='error']")).getText();
+		
+		Assert.assertEquals(actualError, expectedError);
+		
+		driver.navigate().refresh(); //refresh page after verification passes		
+		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+	}
+	
+	@Test (priority = 4)
+	public void loginPasswordOnly(){
+		driver.findElement(By.xpath(globalVars.txtboxSignUpPassword)).sendKeys(globalVars.password); //type password only
+		driver.findElement(By.xpath(globalVars.btnSignUpJoin)).click(); //click the Join button
+		String expectedError = "Check that you've filled in all fields and your email is correct";
+		String actualError = driver.findElement(By.xpath("//p[@class='error']")).getText();
+		
+		Assert.assertEquals(actualError, expectedError);
+		
+		driver.navigate().refresh(); //refresh page after verification passes	
+		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+	}
+	
+	@Test (priority = 5)
+	public void loginFull(){
+		driver.findElement(By.xpath(globalVars.txtboxSignUpFirstName)).sendKeys(globalVars.firstname);
+		driver.findElement(By.xpath(globalVars.txtboxSignUpLastName)).sendKeys(globalVars.lastName);
+		String expectedLastName = globalVars.lastName;
+		driver.findElement(By.xpath(globalVars.txtboxSignUpEmail)).sendKeys(globalVars.email);
+		String expectedEmail = globalVars.email;
+		driver.findElement(By.xpath(globalVars.txtboxSignUpPassword)).sendKeys(globalVars.password); //type password only
+		driver.findElement(By.xpath(globalVars.btnSignUpJoin)).click(); //click the Join button
+		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+		
+		driver.findElement(By.xpath("//a[@class='jsx-3861230406 UserMenu__Trigger no-underline']")).click();
+		
+		Assert.assertEquals(driver.findElement(By.xpath(globalVars.txtboxProfileLastName)).getAttribute("value"), expectedLastName);
+		Assert.assertEquals(driver.findElement(By.xpath(globalVars.txtboxProfileEmail)).getAttribute("value"), expectedEmail);
+		
+	}
+	
+	@AfterTest
+	public void terminateBrowser() {
+		driver.close();
 	}
 }
