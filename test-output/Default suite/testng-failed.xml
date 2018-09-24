@@ -6,7 +6,8 @@
       <class name="famengpackage.login">
         <methods>
           <include name="launchBrowser"/>
-          <include name="loginNoCredentials"/>
+          <include name="loginWrongPassword"/>
+          <include name="loginSuccessful"/>
         </methods>
       </class> <!-- famengpackage.login -->
     </classes>

@@ -9,7 +9,12 @@ public class globalVars {
 	public static String qaBaseURL = "qa4.fameandpartners.com"; //QA1 URL
 	public static String prodBaseURL = "www.fameandpartners.com"; //PRODUCTION URL
 	
-	//account information
+	//static test user account
+	public static String testFirstName = "LAbron";
+	public static String testLastName = "James";
+	public static String testEmail = "showtime23@mailinator.com";
+	
+	//dynamic account information
 	public static String date = java.time.LocalDate.now().toString();
 	public static String time = java.time.LocalTime.now().toString();
 	public static String constructLastName = date + time;

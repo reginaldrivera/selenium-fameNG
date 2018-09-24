@@ -24,10 +24,10 @@ public class createTestUser {
 	
 	@Test
 	public void createUser(){
-		driver.findElement(By.xpath(globalVars.txtboxSignUpFirstName)).sendKeys("LAbron");
-		driver.findElement(By.xpath(globalVars.txtboxSignUpLastName)).sendKeys("James");
-		driver.findElement(By.xpath(globalVars.txtboxSignUpEmail)).sendKeys("showtime23@mailinator.com");
-		driver.findElement(By.xpath(globalVars.txtboxSignUpPassword)).sendKeys("Test1234"); 
+		driver.findElement(By.xpath(globalVars.txtboxSignUpFirstName)).sendKeys(globalVars.testFirstName);
+		driver.findElement(By.xpath(globalVars.txtboxSignUpLastName)).sendKeys(globalVars.testLastName);
+		driver.findElement(By.xpath(globalVars.txtboxSignUpEmail)).sendKeys(globalVars.testEmail);
+		driver.findElement(By.xpath(globalVars.txtboxSignUpPassword)).sendKeys(globalVars.password); 
 		driver.findElement(By.xpath(globalVars.btnSignUpJoin)).click();
 		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 		
