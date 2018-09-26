@@ -45,7 +45,7 @@ public class globalVars {
 	public static String ccZipCode = "90424";
 	
 	//buttons
-	public static String btnSideCartCheckout = "//a[@class='jsx-960340962 button Button Button--fullwidth']";
+	public static String btnSideCartCheckout = "//a[@class='jsx-1369247218 button Button Button--fullwidth']";
 	public static String btnCheckoutContinueToPayment = "//button[@name='pay_securely']";
 	public static String btnPaymentPlaceOrder = "//button[@class='btn btn-black btn-block btn-md StripeForm__checkout-button']";
 	public static String btnSignUpJoin = "//button[@class='jsx-1369247218 button Button Button--fullwidth']";

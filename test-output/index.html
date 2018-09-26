@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,17 +102,22 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="famengpackage.login" hash-for-method="loginNoCredentials">loginNoCredentials</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="famengpackage.purchaseVisa" hash-for-method="addToBag">addToBag</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="famengpackage.login" hash-for-method="loginSuccessful">loginSuccessful</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="famengpackage.purchaseVisa" hash-for-method="checkoutPage">checkoutPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="famengpackage.login" hash-for-method="loginWrongPassword">loginWrongPassword</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="famengpackage.purchaseVisa" hash-for-method="confirmationPage">confirmationPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="famengpackage.purchaseVisa" hash-for-method="paymentPage">paymentPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -130,28 +135,35 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">famengpackage.login</span>
+              <span class="class-name">famengpackage.purchaseVisa</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="loginNoCredentials">
-                  </a> <!-- loginNoCredentials -->
-                  <span class="method-name">loginNoCredentials</span>
+                  <a name="addToBag">
+                  </a> <!-- addToBag -->
+                  <span class="method-name">addToBag</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="loginSuccessful">
-                  </a> <!-- loginSuccessful -->
-                  <span class="method-name">loginSuccessful</span>
+                  <a name="checkoutPage">
+                  </a> <!-- checkoutPage -->
+                  <span class="method-name">checkoutPage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="loginWrongPassword">
-                  </a> <!-- loginWrongPassword -->
-                  <span class="method-name">loginWrongPassword</span>
+                  <a name="confirmationPage">
+                  </a> <!-- confirmationPage -->
+                  <span class="method-name">confirmationPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="paymentPage">
+                  </a> <!-- paymentPage -->
+                  <span class="method-name">paymentPage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -159,7 +171,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/6_/st1j11z548d8zxylyxry10sh0000gn/T/testng-eclipse--439403140/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/6_/st1j11z548d8zxylyxry10sh0000gn/T/testng-eclipse--1312918623/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -168,7 +180,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;famengpackage.login&quot;/&gt;
+      &lt;class name=&quot;famengpackage.purchaseVisa&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -208,24 +220,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'loginSuccessful')
-data.setCell(0, 2, 'famengpackage.login')
-data.setCell(0, 3, 3319);
+data.setCell(0, 1, 'checkoutPage')
+data.setCell(0, 2, 'famengpackage.purchaseVisa')
+data.setCell(0, 3, 6570);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'loginWrongPassword')
-data.setCell(1, 2, 'famengpackage.login')
-data.setCell(1, 3, 913);
+data.setCell(1, 1, 'confirmationPage')
+data.setCell(1, 2, 'famengpackage.purchaseVisa')
+data.setCell(1, 3, 5937);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'loginNoCredentials')
-data.setCell(2, 2, 'famengpackage.login')
-data.setCell(2, 3, 582);
+data.setCell(2, 1, 'addToBag')
+data.setCell(2, 2, 'famengpackage.purchaseVisa')
+data.setCell(2, 3, 3359);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'paymentPage')
+data.setCell(3, 2, 'famengpackage.purchaseVisa')
+data.setCell(3, 3, 701);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 16 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -251,23 +267,31 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">famengpackage.login</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">famengpackage.purchaseVisa</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">launchBrowser</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">loginNoCredentials</span>
-                <span class="method-start">2922 ms</span>
+                <span class="method-name">addToBag</span>
+                <span class="method-start">6373 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">loginWrongPassword</span>
-                <span class="method-start">3507 ms</span>
+                <span class="method-name">checkoutPage</span>
+                <span class="method-start">9736 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">loginSuccessful</span>
-                <span class="method-start">4422 ms</span>
+                <span class="method-name">paymentPage</span>
+                <span class="method-start">16308 ms</span>
               </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">confirmationPage</span>
+                <span class="method-start">17010 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">terminateBrowser</span>
+                <span class="method-start">22948 ms</span>
+              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

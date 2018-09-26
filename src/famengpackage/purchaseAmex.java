@@ -23,8 +23,16 @@ public class purchaseAmex {
 		//driver.get(globalVars.protocol + globalVars.prodBaseURL + pageURL);
 		//QA
 		driver.get(globalVars.protocol + globalVars.usernamePassword + globalVars.qaBaseURL + pageURL);
+		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
 		
-		//driver.manage().window().maximize();
+		WebElement emailCaptureModal = driver.findElement(By.xpath("//div[@class='jsx-2374553876 EmailCaptureModal']"));
+		
+		//handle Email Capture Modal in PDP
+		if (emailCaptureModal.isDisplayed()){
+			driver.findElement(By.xpath("//body/div[@id='root']/main[contains(@class,'jsx-888058885')]/div[@class='jsx-2374553876 EmailCaptureModal__Wrapper']/div[@class='jsx-2374553876 EmailCaptureModal']/div[@class='jsx-2374553876 EmailCaptureModal__CloseWrapper']/a[@class='jsx-2374553876 close']/*[1]")).click();
+		}
+		driver.navigate().refresh(); //refresh page after closing modal
+
 	}
 	
 	@Test (priority = 0)
@@ -35,7 +43,7 @@ public class purchaseAmex {
 		driver.findElement(By.xpath("//div[@class='jsx-2788886246 dropdown-container']")).click(); //click height dropdown
 		driver.findElement(By.xpath("//button[contains(text(),'4ft 10in')]")).click(); //select height 4ft 10 inches
 		driver.findElement(By.xpath("//div[contains(text(),'US 0')]")).click(); //select size US0
-		driver.findElement(By.xpath("//button[@class='jsx-960340962 button Button Button--secondary Button--fullwidth action-buttons']")).click(); //click Done
+		driver.findElement(By.xpath("//button[@class='jsx-1369247218 button Button Button--secondary Button--fullwidth action-buttons']")).click(); //click Done
 		//Verify height and size got selected
 		String heightExpected = "US 0 • 4' 10\"";
 		WebElement heightActual = driver.findElement(By.xpath("//div//div[4]//div[2]//div[1]//ul[1]"));	
@@ -45,12 +53,12 @@ public class purchaseAmex {
 		System.out.println("Actual Height:  " + heightActual.getText());		
 		Assert.assertEquals(heightActual.getText(), heightExpected);
 		
-		driver.findElement(By.xpath("//button[@class='jsx-960340962 button Button Button--fullwidth add-to-cart-button']")).click(); //click Add to Bag
+		driver.findElement(By.xpath("//button[@class='jsx-1369247218 button Button Button--fullwidth add-to-cart-button']")).click(); //click Add to Bag
 		
 		//wait for side cart to load
 		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
 		//Verify Shopping Bag side window opened by checking that Checkout button is present		
-		Boolean isPresent = driver.findElements(By.xpath("//a[@class='jsx-960340962 button Button Button--fullwidth']")).size() > 0;
+		Boolean isPresent = driver.findElements(By.xpath(globalVars.btnSideCartCheckout)).size() > 0;
 		System.out.println("Does Checkout button exists?  " + isPresent);
 	}
 	
@@ -62,7 +70,7 @@ public class purchaseAmex {
 		driver.findElement(By.xpath(globalVars.btnSideCartCheckout)).click();
 		
 		//Fill out Deliver To fields
-		driver.findElement(By.xpath(globalVars.txtboxCheckoutFirstName)).sendKeys(globalVars.firstname + "_visa"); //first name
+		driver.findElement(By.xpath(globalVars.txtboxCheckoutFirstName)).sendKeys(globalVars.firstname + "_amex"); //first name
 		driver.findElement(By.xpath(globalVars.txtboxCheckoutLastName)).sendKeys(globalVars.lastName); //last name
 		driver.findElement(By.xpath(globalVars.txtboxCheckoutEmail)).sendKeys(globalVars.email); //email
 		driver.findElement(By.xpath(globalVars.txtboxCheckoutPhone)).sendKeys(globalVars.phone); //phone
